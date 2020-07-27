@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="17966" started-at="2020-07-24T13:39:57Z" finished-at="2020-07-24T13:40:14Z">
+  <suite name="Default suite" duration-ms="11700" started-at="2020-07-27T01:46:56Z" finished-at="2020-07-27T01:47:08Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="17966" started-at="2020-07-24T13:39:57Z" finished-at="2020-07-24T13:40:14Z">
+    <test name="Default test" duration-ms="11700" started-at="2020-07-27T01:46:56Z" finished-at="2020-07-27T01:47:08Z">
       <class name="com.linkedIn.qa.testcases.LoginPage">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.linkedIn.qa.testcases.LoginPage@5442a311]" name="setUp" is-config="true" duration-ms="17884" started-at="2020-07-24T19:09:57Z" finished-at="2020-07-24T19:10:14Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.linkedIn.qa.testcases.LoginPage@5442a311]" name="setUp" is-config="true" duration-ms="11618" started-at="2020-07-27T07:16:56Z" finished-at="2020-07-27T07:17:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="verifyHomePageTitleTest()[pri:1, instance:com.linkedIn.qa.testcases.LoginPage@5442a311]" name="verifyHomePageTitleTest" duration-ms="25" started-at="2020-07-24T19:10:14Z" finished-at="2020-07-24T19:10:14Z">
+        <test-method status="FAIL" signature="verifyHomePageTitleTest()[pri:1, instance:com.linkedIn.qa.testcases.LoginPage@5442a311]" name="verifyHomePageTitleTest" duration-ms="24" started-at="2020-07-27T07:17:08Z" finished-at="2020-07-27T07:17:08Z">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException

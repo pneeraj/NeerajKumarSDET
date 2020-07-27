@@ -9,14 +9,21 @@ import com.linkedIn.qa.base.TestBase;
 
 public class LoginPage extends TestBase {
 
-	@FindBy(name="username")
+	@FindBy(id="email-or-phone")
 	WebElement username;
 	
-	@FindBy(name="password")
+	@FindBy(id="password")
 	WebElement password;
 	
-	@FindBy(xpath="//input[@type='submit']")
+	@FindBy(xpath="//button[@type=\"submit\"]")
 	WebElement loginBtn;
+	
+	
+	@FindBy(xpath="//span[contains(text(),\"Sign in with Google\")]")
+	WebElement sin;
+	
+	//span[contains(text(),"Sign in with Google")]
+	
 	
 	@FindBy(xpath="//button[contains(text(),'Sign Up')]")
 	WebElement signUpBtn;
