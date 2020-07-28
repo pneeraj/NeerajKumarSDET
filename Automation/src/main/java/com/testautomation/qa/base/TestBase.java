@@ -1,4 +1,4 @@
-package com.linkedIn.qa.base;
+package com.testautomation.qa.base;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -11,9 +11,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.events.WebDriverEventListener;
 
-import com.linkedIn.qa.util.TestUtil;
-import com.linkedIn.qa.util.WebEventListener;
-//import com.crm.util*;
+import com.testautomation.qa.util.TestUtil;
+import com.testautomation.qa.util.WebEventListener;
 
 public class TestBase {
 

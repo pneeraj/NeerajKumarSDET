@@ -1,11 +1,11 @@
-package com.linkedIn.qa.pages;
+package com.testautomation.qa.pages;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.linkedIn.qa.base.TestBase;
+import com.testautomation.qa.base.TestBase;
 
 public class LoginPage extends TestBase {
 

@@ -1,4 +1,4 @@
-package com.linkedIn.qa.util;
+package com.testautomation.qa.util;
 
 import java.io.IOException;
 
@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.WebDriverEventListener;
 
-import com.linkedIn.qa.base.TestBase;
+import com.testautomation.qa.base.TestBase;
 
 /*************************************** PURPOSE **********************************
 
