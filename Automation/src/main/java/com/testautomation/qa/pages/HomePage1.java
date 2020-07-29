@@ -6,9 +6,9 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.testautomation.qa.base.TestBase;
+import com.testautomation.qa.base.TestBase1;
 
-public class HomePage extends TestBase {
+public class HomePage1 extends TestBase1 {
 
 	@FindBy(xpath = "//td[contains(text(),'User: Naveen K')]")
 	@CacheLookup
@@ -28,7 +28,7 @@ public class HomePage extends TestBase {
 	WebElement tasksLink;
 
 	// Initializing the Page Objects:
-	public HomePage() {
+	public HomePage1() {
 		PageFactory.initElements(driver, this);
 	}
 	
@@ -47,6 +47,7 @@ public class HomePage extends TestBase {
 		Actions action = new Actions(driver);
 		action.moveToElement(contactsLink).build().perform();
 		newContactLink.click();
+		
 		
 	}
 	

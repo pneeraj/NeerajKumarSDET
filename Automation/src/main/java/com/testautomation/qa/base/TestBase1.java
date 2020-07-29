@@ -14,7 +14,7 @@ import org.openqa.selenium.support.events.WebDriverEventListener;
 import com.testautomation.qa.util.TestUtil;
 import com.testautomation.qa.util.WebEventListener;
 
-public class TestBase {
+public class TestBase1 {
 
 	public static WebDriver driver;
 	public static Properties prop;
@@ -23,10 +23,10 @@ public class TestBase {
 	
 
 
-	public TestBase(){
+	public TestBase1(){
 		try {
 			prop = new Properties();
-			FileInputStream ip = new FileInputStream(System.getProperty("user.dir")+ "/src/main/java/com/linkedIn"
+			FileInputStream ip = new FileInputStream(System.getProperty("user.dir")+ "/src/main/java/com/testautomation"
 					+ "/qa/config/config.properties");
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
