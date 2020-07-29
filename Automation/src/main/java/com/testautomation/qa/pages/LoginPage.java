@@ -8,12 +8,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.google.common.graph.SuccessorsFunction;
-import com.testautomation.qa.base.TestBase1;
+import com.testautomation.qa.base.TestBase;
 
 import cucumber.api.java.Before;
 import stepDefinitions.Hooks;
 
-public class LoginPage1 extends TestBase1{
+public class LoginPage extends TestBase{
 
 	
 	@FindBy(xpath="//input[@id=\"usernameField\"]")
@@ -40,7 +40,7 @@ public class LoginPage1 extends TestBase1{
 
 	
 	//Initializing the Page Objects:
-		public LoginPage1(){
+		public LoginPage(){
 			PageFactory.initElements(driver,this);
 		}
 		

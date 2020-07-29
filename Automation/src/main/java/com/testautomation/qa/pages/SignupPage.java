@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.testautomation.qa.base.TestBase1;
+import com.testautomation.qa.base.TestBase;
 
-public class SignupPage extends TestBase1  {
+public class SignupPage extends TestBase  {
 	
 	@FindBy(id="email-or-phone")
 	WebElement username;

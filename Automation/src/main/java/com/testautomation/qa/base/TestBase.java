@@ -14,7 +14,7 @@ import org.openqa.selenium.support.events.WebDriverEventListener;
 import com.testautomation.qa.util.TestUtil;
 import com.testautomation.qa.util.WebEventListener;
 
-public class TestBase1 {
+public class TestBase {
 
 	public static WebDriver driver;
 	public static Properties prop;
@@ -23,7 +23,7 @@ public class TestBase1 {
 	
 
 
-	public TestBase1(){
+	public TestBase(){
 		try {
 			prop = new Properties();
 			FileInputStream ip = new FileInputStream(System.getProperty("user.dir")+ "/src/main/java/com/testautomation"

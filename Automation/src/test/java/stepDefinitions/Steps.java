@@ -1,12 +1,12 @@
 package stepDefinitions;
 
-import com.testautomation.qa.base.TestBase1;
-import com.testautomation.qa.pages.LoginPage1;
+import com.testautomation.qa.base.TestBase;
+import com.testautomation.qa.pages.LoginPage;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 
-public class Steps extends TestBase1 {
+public class Steps extends TestBase {
 	
 	
 	
@@ -14,7 +14,7 @@ public class Steps extends TestBase1 {
 	@Given("^when open chrome browser$")
 	public void startBrowser()
 	{
-		TestBase1.initialization();
+		TestBase.initialization();
 	}
 	
 	
@@ -27,7 +27,7 @@ public class Steps extends TestBase1 {
 	
 	@When("^logged in into LinkedIn application$")
 	public void loginLinkedInApplication() {
-		LoginPage1 log=new LoginPage1();
+		LoginPage log=new LoginPage();
 		log.login("Neeraj9kumarpathak@gmail.com", "Ganga90$");
 	}
 

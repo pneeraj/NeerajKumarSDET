@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.WebDriverEventListener;
 
-import com.testautomation.qa.base.TestBase1;
+import com.testautomation.qa.base.TestBase;
 
 /*************************************** PURPOSE **********************************
 
@@ -21,7 +21,7 @@ as an when the action done (click, findBy etc).
 
 */
 
-public class WebEventListener extends TestBase1 implements WebDriverEventListener {
+public class WebEventListener extends TestBase implements WebDriverEventListener {
 
 
 	public void beforeNavigateTo(String url, WebDriver driver) {
