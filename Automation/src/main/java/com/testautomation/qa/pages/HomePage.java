@@ -20,6 +20,13 @@ public class HomePage extends TestBase {
 	@FindBy(xpath = "//a[contains(text(),'New Contact')]")
 	WebElement newContactLink;
 	
+	
+	@FindBy(xpath = "//li[2]//a[1]//div[2]")
+	WebElement editProfile;
+	
+	
+	////li[2]//a[1]//div[2]
+	
 
 	@FindBy(xpath = "//a[contains(text(),'Deals')]")
 	WebElement dealsLink;
@@ -39,6 +46,10 @@ public class HomePage extends TestBase {
 	
 	public boolean verifyCorrectUserName(){
 		return userNameLabel.isDisplayed();
+	}
+	
+	public void editProfile(){
+		editProfile.click();
 	}
 	
 	

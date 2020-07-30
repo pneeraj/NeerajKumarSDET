@@ -1,4 +1,4 @@
-package stepDefinitions;
+package com.testautomation.qa.stepDefinitions;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,7 +10,7 @@ import cucumber.api.java.Before;
 
 public class Hooks  {
 
-//WebDriver driver;
+
 
 //@After
 //public void iniWebDriver() {

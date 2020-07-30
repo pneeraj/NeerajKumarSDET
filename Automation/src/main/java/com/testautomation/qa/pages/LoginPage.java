@@ -9,20 +9,20 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.google.common.graph.SuccessorsFunction;
 import com.testautomation.qa.base.TestBase;
+import com.testautomation.qa.stepDefinitions.Hooks;
 
 import cucumber.api.java.Before;
-import stepDefinitions.Hooks;
 
 public class LoginPage extends TestBase{
 
 	
 	@FindBy(xpath="//input[@id=\"usernameField\"]")
-	 WebElement username1;
+	 WebElement username;
 	
-	@FindBy(id="password")
+	@FindBy(xpath="//input[@id='passwordField']")
 	 WebElement password;
 	
-	@FindBy(xpath="//button[@type=\"submit\"]")
+	@FindBy(xpath="//button[@type=\"submit\"][1]")
 	 WebElement loginBtn;
 	
 	
@@ -53,20 +53,23 @@ public class LoginPage extends TestBase{
 			return crmLogo.isDisplayed();
 		}
 		
-		public void login(String un, String pwd) {
+		public HomePage login(String un, String pwd) {
 			
 			System.out.println( " Hello"+un);
 			System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
 			String ss=driver.getTitle();
 			
 			System.out.println("Get text...................."+ss);
-			username1.sendKeys(un);;
+			username.sendKeys(un);
+			password.sendKeys(pwd);
+			loginBtn.click();
+			
 		
 //			System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
 //			password.sendKeys(pwd);
 //			loginBtn.click();
 		
-			//return new HomePage();
+			return new HomePage();
 		}
 	
 	
