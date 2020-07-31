@@ -48,8 +48,9 @@ public class HomePage extends TestBase {
 		return userNameLabel.isDisplayed();
 	}
 	
-	public void editProfile(){
+	public SignupPage editProfile(){
 		editProfile.click();
+		return new SignupPage();
 	}
 	
 	
