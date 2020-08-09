@@ -1,5 +1,6 @@
 package com.testautomation.qa.base;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -18,6 +19,7 @@ public class TestBase {
 
 	public static WebDriver driver;
 	public static Properties prop;
+	public static Properties propAPI;
 	public  static EventFiringWebDriver e_driver;
 	public static WebDriverEventListener eventListener;
 	
@@ -37,6 +39,14 @@ public class TestBase {
 
 
 }
+	
+	public static Properties inititializationAPIProp() throws IOException {
+		FileInputStream fis=new FileInputStream("E:\\NeerajSDET\\Automation\\src\\main\\java\\com\\testautomation\\qa\\files\\getData.properties");
+		propAPI = new Properties();
+		propAPI.load(fis);
+		return propAPI;
+	}
+	
 	public static void initialization(){
 		String browserName = prop.getProperty("browser");
 		
