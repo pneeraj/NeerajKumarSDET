@@ -25,10 +25,25 @@ public class Hooks extends TestBase  {
 @Before 
 public void intiBASEURI() throws IOException {
 	
-	RestAssured.baseURI="https://rahulshettyacademy.com";
+	//RestAssured.baseURI="https://rahulshettyacademy.com";
+	
 	TestBase.inititializationAPIProp();
-	String browserName = propAPI.getProperty("BASEURI");
-	System.out.println("In Hooks"+browserName);
+	//String browserName = propAPI.getProperty("BASEURI");
+	
+	//String baseURIBOOK=propAPI.getProperty("BASEURIBook");
+	
+	//System.out.println("Bookkkkkkk"+baseURIBOOK);
+	
+String baseURIJIRA=propAPI.getProperty("JiraBaseURI");
+	
+	//System.out.println("Bookkkkkkk"+baseURIBOOK);
+	
+	
+	RestAssured.baseURI=baseURIJIRA;
+	
+	//System.out.println("In Hooks"+browserName);
+	
+	//BASEURIBook
 }
 
 }

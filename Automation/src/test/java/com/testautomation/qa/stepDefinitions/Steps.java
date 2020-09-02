@@ -10,12 +10,15 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import io.restassured.RestAssured;
+import io.restassured.filter.session.SessionFilter;
 import io.restassured.path.json.JsonPath;
 
 import static io.restassured.RestAssured.given;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 import org.testng.Assert;
@@ -25,6 +28,7 @@ public class Steps extends TestBase {
 	HomePage homepage;
 	SignupPage signup;
 	LoginPage loginpage;
+	String token;
 
 	public static String place = "";
 	Properties prop = new Properties();
@@ -104,6 +108,39 @@ public class Steps extends TestBase {
 	}
 
 
+	//get complexJson json2
+	
+	@And("get complexJson json2$")
+	public void parseComplex2() {
+		JsonPath js=new JsonPath(commMethods.getComplex2());
+		System.out.println("Complex json"+js);
+		System.out.println(commMethods.getComplex2());
+	
+		HashMap<Object, Object> value=js.get("");
+		
+//		Map<String, Map<String, String>> map = 
+//			    new HashMap<String, Map<String, String>>();
+		for(Map.Entry<Object,Object>mp:value.entrySet()) {
+			
+		System.out.println(mp.getKey());
+		System.out.println("---------------");
+		System.out.println(mp.getValue());
+		
+		HashMap<String,String> valueMap=(HashMap<String, String>) mp.getValue();
+		
+		//System.out.println("$$$$$$"+valueMap);
+		System.out.println("Map has started");
+		for(Map.Entry<String,String>mp2:valueMap.entrySet() ) {
+			
+		System.out.println(mp2.getKey());
+		System.out.println("##########");
+		System.out.println(mp2.getValue());
+		}
+		}
+		
+		//System.out.println(value);
+	}
+	
 	@And("get desire value$")
 	public void parseComplex() {
 		
@@ -171,5 +208,52 @@ public class Steps extends TestBase {
 		}
 	}
 
+@When("added books in Librrary API")
+ public void addBook() {
+	HashMap mp=new HashMap();
+	mp.put("Content-Type", "application/json");
+	String body=commMethods.addBooksBody();
+	String ress=propAPI.getProperty("addBook");
+	Response res=commMethods.postMethod(mp, ress, body);
+	System.out.println("Respinse Body---" + res.getBody().asString());
+	
+	
+}
+@When("create Auth from login")
+public void getAuth() {
+	HashMap mp=new HashMap();
+	String body=commMethods.getJIRACredBody();
+	String ress=propAPI.getProperty("creatAuthJira");
+	Response res=commMethods.postMethod(mp, ress, body);
+	System.out.println("STatus code"+res.getStatusCode());
+	System.out.println("Respinse Body---" + res.getBody().asString());
+	
+	JsonPath js= commMethods.toJsonPath(res);
+	String name=js.get("session.name");
+	String value=js.get("session.value");
+	String token=name+value;
+	System.out.println("auth is "+this.token);
+}
 
+@And("create issue in jira")
+public void createIssue() {
+	//createJiraIssue
+	HashMap mp=new HashMap();
+	String issue=propAPI.getProperty("createJiraIssue");
+	String body=commMethods.getIssueBody();
+	Response res=commMethods.postMethod(mp, issue, body);
+	System.out.println("STatus code"+res.getStatusCode());
+	System.out.println("Respinse Body---" + res.getBody().asString());   
+}
+
+@And("atched the file")
+public void sendFile() {
+	String attchement=propAPI.getProperty("jiraAttchment");
+	SessionFilter session=new SessionFilter();
+	
+	given().header("cookie","JSESSIONID=5A9BE6F25D96F5A7F8B093A964EF315C").header("X-Atlassian-Token","no-check")
+	.pathParam("key", "10207").header("Content-Type","multipart/form-data").
+	multiPart("file",new File("E:\\NeerajSDET\\Automation\\src\\test\\java\\com\\testautomation\\qa\\stepDefinitions\\jira.txt")).when().
+	post("rest/api/2/issue/{key}/attachments").then().log().all();
+}
 }
